@@ -1,49 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="?android:attr/selectableItemBackground"
-    android:orientation="vertical">
-    <LinearLayout
+    android:orientation="vertical"
+    tools:background="#FFD5D5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:paddingLeft="18dp"
         android:paddingTop="12dp"
         android:paddingRight="18dp"
-        android:paddingBottom="12dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:paddingBottom="12dp">
+
         <ImageView
             android:id="@+id/iv_image"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:layout_marginRight="6dp" />
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            tools:background="#B9FFB0" />
 
         <TextView
             android:id="@+id/tv_text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/flRight"
+            android:layout_toRightOf="@+id/iv_image"
             android:ellipsize="end"
             android:lines="1"
             android:textColor="@color/_xpopup_title_color"
-            android:textSize="15sp" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:textSize="15sp"
+            tools:background="#B9FFB0"
+            tools:text="测试" />
 
         <FrameLayout
+            android:id="@+id/flRight"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            tools:background="#B9FFB0">
 
             <com.lxj.xpopup.widget.CheckView
-                android:layout_gravity="center_vertical"
                 android:id="@+id/check_view"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:visibility="gone" />
+                android:layout_gravity="center_vertical"
+                android:visibility="gone"
+                tools:visibility="visible" />
         </FrameLayout>
-    </LinearLayout>
-    <include layout="@layout/_xpopup_divider"/>
+    </RelativeLayout>
+
+    <include layout="@layout/_xpopup_divider" />
 </LinearLayout>
